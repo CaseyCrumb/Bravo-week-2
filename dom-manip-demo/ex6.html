@@ -33,9 +33,8 @@ let messageElement = document.getElementById('message');
 let hintElement = document.getElementById('hint');
 let hintButton = document.getElementById('hintButton');
 function checkGuess() {
-  let randomWord = randomWord.value.toLowerCase();
   let userGuess = guessInput.value.toLowerCase();
-  if (userGuess === randomWord) {
+  if (userGuess === randomWord.toLowerCase()) {
     messageElement.textContent = "Correct! You guessed the right word!";
     message.style.color = 'green';
   } else {
