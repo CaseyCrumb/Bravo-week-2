@@ -1,0 +1,71 @@
+<!-- 
+Exercise 6: Simple Word Guess
+Objective: Basic string manipulation and comparison.
+
+Prepare a list of words in a JavaScript array.
+Create an HTML page with an input box and a "Guess" button.
+The user should guess the word. After a guess, inform the user if they're correct or not.
+For added complexity, show a hint (e.g., "It's a fruit").
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOM Manipulation ex6</title>
+
+</head>
+<body>
+  <h1>Guess the Word Game</h1>
+  <label for="guessInput">Enter your guess:</label>
+  <input type="text" id="guessInput">
+  <button id="guessButton">Guess</button>
+  <button id="hintButton">Hint</button>
+  <p id="message"></p>
+  <p id="hint"></p>
+<script>
+let words = ["Cat", "Dog", "Mouse", "Rabbit"];
+let randomWord = words[Math.floor(Math.random() * words.length)];
+let guessInput = document.getElementById('guessInput');
+let guessButton = document.getElementById('guessButton');
+let messageElement = document.getElementById('message');
+let hintElement = document.getElementById('hint');
+let hintButton = document.getElementById('hintButton');
+function checkGuess() {
+  let randomWord = randomWord.value.toLowerCase();
+  let userGuess = guessInput.value.toLowerCase();
+  if (userGuess === randomWord) {
+    messageElement.textContent = "Correct! You guessed the right word!";
+    message.style.color = 'green';
+  } else {
+    messageElement.textContent = "Incorrect! Try again.";
+    message.style.color = 'red';
+  }
+}
+guessButton.addEventListener('click', checkGuess);
+function showHint() {
+  if (randomWord === "Cat") {
+    hintElement.textContent = "It likes milk.";
+    hintElement.style.color = 'blue';
+  } else {
+    if (randomWord === "Dog") {
+      hintElement.textContent = "It Barks!";
+      hintElement.style.color = 'blue';
+    } else {
+      if (randomWord === "Mouse") {
+        hintElement.textContent = "It eats cheese and squeaks!";
+        hintElement.style.color = 'blue';
+      } else {
+        hintElement.textContent = "Its a animal that eats carrots!";
+        hintElement.style.color = 'blue';;
+      }
+    }
+  }
+}
+hintButton.addEventListener('click', showHint);
+
+</script>  
+</body>
+
+</html>
