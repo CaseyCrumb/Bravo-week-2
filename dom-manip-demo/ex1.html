@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOM Manipulation Demo Ex. 1</title>
+  <style>
+    * {
+      margin: 10%;
+      padding: 5%;
+    }
+  </style>
+</head>
+<body>
+  <h1 id="heading">Hello, World!</h1>
+  <button onclick="newColorHeading()">Click Me!</button>
+  <button onclick="revertHeading()">Click Me Next!</button>
+</body>
+<script>
+  console.log("The JavaScript ran");
+  // let heading = document.getElementById("heading");
+  let heading = document.getElementById("heading"); 
+  //create a function that runs when a button is clicked
+  //that changes the text of our heading AND its font color
+  function newColorHeading() {
+    //create a variable to store the heading element
+    // let heading = document.getElementById("heading");
+    let heading = document.querySelector("h1");
+    //update its text
+    heading.innerText = "New color!";
+    //update its font color
+    heading.style.color = "red";
+    heading.style.backgroundColor = "yellow";
+    heading.style.fontSize = "100px";
+  }
+
+  function revertHeading() {
+    let heading = document.getElementById("heading");
+    heading.innerText = "Hello World!";
+    heading.style.color = "";
+    heading.style.backgroundColor = "";
+    heading.style.fontSize = "";
+  }
+
+  // setTimeout(() => {heading.textContent = "Hello, DOM!"}, 5000); //time out, looking ahead
+</script>
+</html>
