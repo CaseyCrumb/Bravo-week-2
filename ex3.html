@@ -10,6 +10,7 @@
     height: 75px;
     background-color: lightslategray;
     margin: 10px;
+    cursor: pointer;
    }
   </style>
 </head>
@@ -33,20 +34,16 @@ When a shape is clicked, change its color to the selected color from the dropdow
 
 </body>
 <script>
-    function changeColor() {
-        // keep track of the currently selected color
-        let selectedColor =document.getElementById("colorPicker").value;
-        //update the shape class to have the new background color
-        document.querySelector(".shape");
-        colorPicker = document.getElementById("colorPicker");
-        function changeColor(event) {
-            let selectedColor = colorPicker.value;
-            event.target.style.backgroundColor = selectedColor;
-        }
-        shapes.forEach(function(shape)){
-          shape.addEventListener("click, changeColor");  
-        }
-    }
+let shapes = document.querySelectorAll(".shape");
+let colorPicker = document.getElementById("colorPicker");
+function changeColor(shape) {
+    let selectedColor = colorPicker.value;
+}
+    shapes.forEach(function(shape) {
+     shape.addEventListener("click", function() {
+        changeColor(shape);
+     });  
+});
  
 </script>
 </html>
