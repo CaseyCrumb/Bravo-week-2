@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOM Manipulation Demo Ex. 3</title>
+  <style>
+   .shape {
+    width: 100px;
+    height: 75px;
+    background-color: lightslategray;
+    margin: 10px;
+   }
+  </style>
+</head>
+<body>
+<!--Create an HTML page with several rectangles using divs and css.
+Add a dropdown menu where the user can select a color.
+When a shape is clicked, change its color to the selected color from the dropdown.
+-->
+
+<div class="shape" onclick="changeColor()"></div>
+<div class="shape" onclick="changeColor()"></div>
+<div class="shape" onclick="changeColor()"></div>
+
+
+<select id="colorPicker">
+    <option value="red">Red</option>
+    <option value="green">Green</option>
+    <option value="blue">Blue</option>
+</select>
+
+
+</body>
+<script>
+    function changeColor() {
+        // keep track of the currently selected color
+        let selectedColor =document.getElementById("colorPicker").value;
+        //update the shape class to have the new background color
+        document.querySelector(".shape");
+        colorPicker = document.getElementById("colorPicker");
+        function changeColor(event) {
+            let selectedColor = colorPicker.value;
+            event.target.style.backgroundColor = selectedColor;
+        }
+        shapes.forEach(function(shape)){
+          shape.addEventListener("click, changeColor");  
+        }
+    }
+ 
+</script>
+</html>
