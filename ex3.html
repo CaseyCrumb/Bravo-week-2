@@ -20,12 +20,13 @@ Add a dropdown menu where the user can select a color.
 When a shape is clicked, change its color to the selected color from the dropdown.
 -->
 
-<div class="shape" onclick="changeColor()"></div>
-<div class="shape" onclick="changeColor()"></div>
-<div class="shape" onclick="changeColor()"></div>
+<div class="shape" onclick="changeColor(this)"></div>
+<div class="shape" onclick="changeColor(this)"></div>
+<div class="shape" onclick="changeColor(this)"></div>
 
 
 <select id="colorPicker">
+    <option value="lightslategray">Default</option>
     <option value="red">Red</option>
     <option value="green">Green</option>
     <option value="blue">Blue</option>
