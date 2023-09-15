@@ -1,0 +1,39 @@
+<!--
+Exercise 7: Displaying Elements Conditionally
+Objective: Understand conditional rendering of elements.
+
+Create an HTML page with a "Show/Hide Hint" button.
+Initially, an image or some text should be hidden.
+When the button is clicked, show the image/text if it's 
+hidden and vice versa.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      .hint {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Show/Hide Hint</h1>
+    <p class="hint">This is a hint!</p>
+    <button id="toggleHintButton">Show/Hide Hint</button>
+
+    <script>
+      document.getElementById("toggleHintButton").addEventListener("click", function () {
+        let hint = document.querySelector(".hint"); //get the hint element
+        if (hint.style.display === "none") {
+          hint.style.display = "block"; //show hint
+        } else {
+          hint.style.display = "none";//hide hint
+        }
+      });
+    </script>
+  </body>
+</html>
