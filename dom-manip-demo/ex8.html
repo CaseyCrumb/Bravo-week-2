@@ -8,12 +8,40 @@ Display the list of words below in a ul.
 -->
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body>
-  
-</body>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Array</title>
+  </head>
+  <body>
+    <h1>Dynamic Array</h1>
+    <input type="text" id="wordInput" placeholder="enter">
+    <button id="addWordButton">Add Word</button>
+    <ul id="wordList"></ul>
+
+
+    <script>
+      let wordArray = [];
+      let wordInput = document.getElementById("wordInput");
+      let addWordButton = document.getElementById("addWordButton");
+      let wordList = document.getElementById("wordList");
+      addWordButton.addEventListener("click", "enter", function() {
+        let newWord = wordInput.value.trim();
+        if (newWord !== "") {
+          wordArray.push(newWord);
+          wordInput.value = "";
+          displayWords();
+        }
+      });
+
+      function displayWords() {
+        wordList.innerHTML = "";
+        for (let word of wordArray) {
+          let listItem = document.createElement("li");
+          listItem.textContent = word;
+          wordList.appendChild(listItem);
+        }
+      }
+    </script>
+  </body>
 </html>
