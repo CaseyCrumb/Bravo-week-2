@@ -6,7 +6,7 @@ var col = 0; // current letter for that attempt
 
 var gameOver = false;
 // var word = "SQUID";
-var wordList = ["About", "Alert", "Argue", "Beach", "Above", "Alike", "Arise", "Began", "Abuse", "Alive", "Array", "Begin", "Actor","Allow"];
+var wordList = ["About", "Alert", "Argue", "Beach", "Above", "Alike", "Arise", "Began", "Abuse", "Alive", "Array", "Begin", "Actor", "Allow", "Crony", "crook", "cross", "croup", "crowd", "crown", "crude", "delta", "delve", "demon", "demur", "denim", "dense", "depot", "depth", "derby", "deter", "detox", "deuce", "devil", "diary", "dicey", "digit", "dilly", "dimly", "diner", "dingo", "dingy", "diode", "dirge", "label", "labor", "laden", "ovary", "ovate", "overt", "ovine", "ovoid"];
 var word = wordList[Math.floor(Math.random() * wordList.length)].toUpperCase();
 console.log(word);
 
